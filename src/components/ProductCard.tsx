@@ -6,15 +6,25 @@ interface ProductCardProps{
 
 function ProductCard({ product }: ProductCardProps){
     return (
-        <div>
-            <img src={product.image} alt={product.title} width="150"/>
+         <div className="rounded-xl border p-4 shadow-sm">
+      <img
+        src={product.image}
+        alt={product.title}
+        className="h-48 w-full object-contain"
+      />
 
-            <h2>{product.title}</h2>
+      <h2 className="mt-4 text-lg font-semibold">
+        {product.title}
+      </h2>
 
-            <p>{product.category}</p>
+      <p className="text-sm text-gray-500">
+        {product.category}
+      </p>
 
-            <strong>${product.price}</strong>
-        </div>
+      <p className="mt-2 text-xl font-bold">
+        ${product.price}
+      </p>
+    </div>
     )
 }
 
